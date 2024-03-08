@@ -8,6 +8,28 @@ RapidSQL est une bibliothèque Python conçue pour simplifier les interactions a
 - **Génération Automatique de Modèles** : Produit des classes Python correspondant aux tables de la base de données, simplifiant l'accès et la manipulation des données.
 - **Support des Relations entre Tables** : Génère automatiquement des méthodes et des attributs pour gérer les relations entre tables, telles que les relations un-à-plusieurs.
 
+## Installation des Dépendances 
+
+Ce projet nécessite l'installation de plusieurs dépendances Python, listées dans le fichier requirements.txt. Pour installer ces dépendances, suivez les étapes ci-dessous :
+
+### Prérequis
+
+Assurez-vous d'avoir Python et pip installés sur votre système. pip est le gestionnaire de paquets pour Python qui permet d'installer des paquets depuis le Python Package Index (PyPI).
+
+### Installation
+
+Ouvrez un terminal ou une invite de commande.
+
+Naviguez jusqu'au répertoire de votre projet où se trouve le fichier requirements.txt.
+
+Exécutez la commande suivante :
+
+```bash
+pip install -r requirements.txt
+```
+
+Cette commande demande à pip de lire le fichier requirements.txt et d'installer toutes les dépendances qu'il contient. pip va automatiquement télécharger et installer ces paquets, ainsi que leurs dépendances, depuis PyPI.
+
 ## Gestion Automatique des Identifiants
 
 Dans RapidSQL, chaque table que vous créez bénéficie automatiquement d'une colonne d'identifiant `id` en auto-incrémentation. Cela signifie que vous n'avez pas besoin de spécifier explicitement une colonne `id` lors de la création de vos tables : RapidSQL s'en charge pour vous, garantissant ainsi que chaque enregistrement est unique et facilement identifiable.
