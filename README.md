@@ -31,7 +31,7 @@ La table 'article' inclura les colonnes 'titre' et 'contenu', de type 'TEXT',ain
 
 ## Exemples d'utilisation
 
-###Créer un nouvel utilisateur
+### Créer un nouvel utilisateur
 
 ```python
 from models import User
@@ -40,7 +40,7 @@ new_user = User(username="exemple", password="123456", email="exemple@mail.com")
 new_user.insert()
 ```
 
-###Obtenir des informations sur un utilisateur
+### Obtenir des informations sur un utilisateur
 
 ```python
 user = get_user(condition="username='exemple'", first=True)
@@ -48,7 +48,7 @@ if user:
     print(user.username, user.email)
 ```
 
-###Mettre à jour un utilisateur
+### Mettre à jour un utilisateur
 
 ```python
 user = get_user(condition="username='exemple'", first=True)
@@ -56,7 +56,7 @@ user.password = "nouveauMotDePasse"
 user.update()
 ```
 
-###Supprimer un utilisateur
+### Supprimer un utilisateur
 
 ```pyhton
 user = get_user(condition="username='exemple'", first=True)
