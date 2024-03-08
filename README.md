@@ -15,10 +15,13 @@ Dans RapidSQL, chaque table que vous créez bénéficie automatiquement d'une co
 ### Exemple de Création de Table
 
 ```python
+from database import *
+
 create_table('database.sqlite3', 'user', {
     'username': 'TEXT',
     'password': 'TEXT'
 })
+
 create_table('database.sqlite3', 'article', {
     'titre': 'TEXT',
     'contenu': 'TEXT',
@@ -29,7 +32,33 @@ create_table('database.sqlite3', 'article', {
 Dans cet exemple, la table `user` contiendra les colonnes `username` et `password`, toutes deux de type `TEXT`. Un identifiant unique `id` en auto-incrémentation est automatiquement ajouté à cette table, bien que cela ne soit pas explicitement spécifié dans l'appel de fonction.
 La table `article` inclura les colonnes `titre` et `contenu`, de type `TEXT`,ainsi qu'une colonne `user_id` de type `INTEGER`. Cette dernière colonne est destinée à stocker des clés étrangères référençant la table `user`, permettant ainsi de lier chaque article à un utilisateur spécifique. Comme pour la table `user`, un identifiant unique `id` en auto-incrémentation est automatiquement ajouté.
 
+## Génération du fichier `models.py`
+
 ## Exemples d'utilisation
+
+Pour initialiser votre base de données et générer automatiquement le fichier `models.py`, qui contient les classes modèles Python correspondant à la structure de votre base de données, vous devez exécuter le script `install_db.py`. Ce fichier s'occupe de créer votre base de données SQLite et de préparer le fichier `models.py` en fonction des tables et des relations définies.
+
+### Étapes pour Générer `models.py`
+
+Assurez-vous que tous les prérequis sont installés et que votre environnement Python est correctement configuré.
+
+Ouvrez un terminal ou un invite de commande.
+
+Naviguez jusqu'au répertoire de votre projet où se trouve le fichier install_db.py.
+
+Exécutez la commande suivante :
+
+```python
+python install_db.py
+```
+
+Le script va créer la base de données SQLite spécifiée dans le fichier (par exemple, database.sqlite3) s'il ne trouve pas de base de données existante. Ensuite, il crée les tables définies dans le script et génère le fichier models.py en fonction de ces tables.
+
+Une fois l'exécution terminée, vous trouverez le fichier models.py dans le répertoire de votre projet. Ce fichier contiendra des classes Python générées automatiquement pour chaque table de votre base de données, facilitant ainsi l'accès et la manipulation des données à travers une interface orientée objet.
+
+### Utilisation de `models.py`
+
+Après la génération, le fichier `models.py` peut être importé et utilisé dans votre projet pour interagir avec la base de données, ne pas oublier d'importer aussi la base de donnée `database.sqlite3` ainsi que le fichier `database.py`. Par exemple, pour créer un nouvel enregistrement, mettre à jour des données existantes, ou récupérer des informations à partir de la base de données, vous pouvez simplement instancier et utiliser les classes modèles correspondantes.
 
 ### Créer un nouvel utilisateur
 
