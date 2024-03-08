@@ -1,4 +1,4 @@
-# RapidSQL
+# RapidSQL v1.0
 
 RapidSQL est une bibliothèque Python conçue pour simplifier les interactions avec les bases de données SQLite. Elle offre une interface orientée objet pour effectuer des opérations de création, de lecture, de mise à jour et de suppression de données. Le projet intègre également des fonctionnalités avancées telles que la gestion des barres de progression lors d'insertions massives de données et la génération automatique de classes modèles Python adaptées à la structure de la base de données.
 
@@ -10,7 +10,7 @@ RapidSQL est une bibliothèque Python conçue pour simplifier les interactions a
 
 ## Gestion Automatique des Identifiants
 
-Dans RapidSQL, chaque table que vous créez bénéficie automatiquement d'une colonne d'identifiant (`id`) en auto-incrémentation. Cela signifie que vous n'avez pas besoin de spécifier explicitement une colonne `id` lors de la création de vos tables : RapidSQL s'en charge pour vous, garantissant ainsi que chaque enregistrement est unique et facilement identifiable.
+Dans RapidSQL, chaque table que vous créez bénéficie automatiquement d'une colonne d'identifiant `id` en auto-incrémentation. Cela signifie que vous n'avez pas besoin de spécifier explicitement une colonne `id` lors de la création de vos tables : RapidSQL s'en charge pour vous, garantissant ainsi que chaque enregistrement est unique et facilement identifiable.
 
 ### Exemple de Création de Table
 
@@ -26,8 +26,8 @@ create_table('database.sqlite3', 'article', {
 })
 ```
 
-Dans cet exemple, la table `user` contiendra les colonnes `username` et `password`, toutes deux de type `TEXT`. Un identifiant unique (id) en auto-incrémentation est automatiquement ajouté à cette table, bien que cela ne soit pas explicitement spécifié dans l'appel de fonction.
-La table `article` inclura les colonnes `titre` et `contenu`, de type `TEXT`,ainsi qu'une colonne `user_id` de type `INTEGER`. Cette dernière colonne est destinée à stocker des clés étrangères référençant la table `user`, permettant ainsi de lier chaque article à un utilisateur spécifique. Comme pour la table `user`, un identifiant unique (id) en auto-incrémentation est automatiquement ajouté.
+Dans cet exemple, la table `user` contiendra les colonnes `username` et `password`, toutes deux de type `TEXT`. Un identifiant unique `id` en auto-incrémentation est automatiquement ajouté à cette table, bien que cela ne soit pas explicitement spécifié dans l'appel de fonction.
+La table `article` inclura les colonnes `titre` et `contenu`, de type `TEXT`,ainsi qu'une colonne `user_id` de type `INTEGER`. Cette dernière colonne est destinée à stocker des clés étrangères référençant la table `user`, permettant ainsi de lier chaque article à un utilisateur spécifique. Comme pour la table `user`, un identifiant unique `id` en auto-incrémentation est automatiquement ajouté.
 
 ## Exemples d'utilisation
 
@@ -65,7 +65,7 @@ user.delete()
 
 ## Relations entre Tables et Chargement Dynamique
 
-RapidSQL facilite la gestion des relations entre vos tables. Lorsqu'une table comporte une colonne clé étrangère, par exemple user_id dans une table article, des méthodes et des attributs sont automatiquement générés pour accéder facilement aux données relationnelles.
+RapidSQL facilite la gestion des relations entre vos tables. Lorsqu'une table comporte une colonne clé étrangère, par exemple `user_id` dans une table article, des méthodes et des attributs sont automatiquement générés pour accéder facilement aux données relationnelles.
 
 Accéder aux Relations : Pour un utilisateur, accéder à ses articles se fait via la méthode `get_article()` qui charge la liste des articles dans l'attribut article de l'instance User.
 
@@ -73,7 +73,7 @@ Chargement Inverse : De la même manière, un objet Article aura accès à son u
 
 ### Exemples de Relations
 
-Accès aux Articles d'un Utilisateur : Si une table article contient une colonne user_id, la classe générée `User()` aura un attribut article et une méthode `get_article()`. Cette méthode renvoie une liste de tous les objets Article liés à l'utilisateur, accessibles via self.article.
+Accès aux Articles d'un Utilisateur : Si une table article contient une colonne `user_id`, la classe générée `User()` aura un attribut article et une méthode `get_article()`. Cette méthode renvoie une liste de tous les objets Article liés à l'utilisateur, accessibles via `self.article`.
 
 ```python
 user = get_user(condition="username='exemple'", first=True)
@@ -83,7 +83,7 @@ if user:
         print(article.title)  # Hypothétique attribut 'title' de l'objet Article
 ```        
 
-Association d'un Article à un Utilisateur : Inversement, un objet `Article()` inclura un attribut user et une méthode `get_user()`, qui charge l'objet User associé dans self.user.
+Association d'un Article à un Utilisateur : Inversement, un objet `Article()` inclura un attribut user et une méthode `get_user()`, qui charge l'objet User associé dans `self.user`.
 
 ```python
 article = get_article(condition="title='Mon Premier Article'", first=True)
