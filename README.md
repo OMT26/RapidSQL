@@ -26,8 +26,8 @@ create_table('database.sqlite3', 'article', {
 })
 ```
 
-Dans cet exemple, la table 'user' contiendra les colonnes 'username' et 'password', toutes deux de type 'TEXT'. Un identifiant unique (id) en auto-incrémentation est automatiquement ajouté à cette table, bien que cela ne soit pas explicitement spécifié dans l'appel de fonction.
-La table 'article' inclura les colonnes 'titre' et 'contenu', de type 'TEXT',ainsi qu'une colonne 'user_id' de type 'INTEGER'. Cette dernière colonne est destinée à stocker des clés étrangères référençant la table 'user', permettant ainsi de lier chaque article à un utilisateur spécifique. Comme pour la table 'user', un identifiant unique (id) en auto-incrémentation est automatiquement ajouté.
+Dans cet exemple, la table `user` contiendra les colonnes `username` et `password`, toutes deux de type `TEXT`. Un identifiant unique (id) en auto-incrémentation est automatiquement ajouté à cette table, bien que cela ne soit pas explicitement spécifié dans l'appel de fonction.
+La table `article` inclura les colonnes `titre` et `contenu`, de type `TEXT`,ainsi qu'une colonne `user_id` de type `INTEGER`. Cette dernière colonne est destinée à stocker des clés étrangères référençant la table `user`, permettant ainsi de lier chaque article à un utilisateur spécifique. Comme pour la table `user`, un identifiant unique (id) en auto-incrémentation est automatiquement ajouté.
 
 ## Exemples d'utilisation
 
