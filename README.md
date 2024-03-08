@@ -56,8 +56,6 @@ La table `article` inclura les colonnes `titre` et `contenu`, de type `TEXT`,ain
 
 ## Génération du fichier `models.py`
 
-## Exemples d'utilisation
-
 Pour initialiser votre base de données et générer automatiquement le fichier `models.py`, qui contient les classes modèles Python correspondant à la structure de votre base de données, vous devez exécuter le script `install_db.py`. Ce fichier s'occupe de créer votre base de données SQLite et de préparer le fichier `models.py` en fonction des tables et des relations définies.
 
 ### Étapes pour Générer `models.py`
@@ -82,10 +80,12 @@ Une fois l'exécution terminée, vous trouverez le fichier models.py dans le ré
 
 Après la génération, le fichier `models.py` peut être importé et utilisé dans votre projet pour interagir avec la base de données, ne pas oublier d'importer aussi la base de donnée `database.sqlite3` ainsi que le fichier `database.py`. Par exemple, pour créer un nouvel enregistrement, mettre à jour des données existantes, ou récupérer des informations à partir de la base de données, vous pouvez simplement instancier et utiliser les classes modèles correspondantes.
 
+## Exemples d'utilisation
+
 ### Créer un nouvel utilisateur
 
 ```python
-from models import User
+from models import *
 
 new_user = User(username="exemple", password="123456", email="exemple@mail.com")
 new_user.insert()
