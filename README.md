@@ -1,6 +1,6 @@
 # RapidSQL v1.0
 
-RapidSQL est une bibliothèque Python conçue pour simplifier les interactions avec les bases de données SQLite. Elle offre une interface orientée objet pour effectuer des opérations de création, de lecture, de mise à jour et de suppression de données. Le projet intègre également des fonctionnalités avancées telles que la gestion des barres de progression lors d'insertions massives de données et la génération automatique de classes modèles Python adaptées à la structure de la base de données.
+RapidSQL est un utilitaire Python conçue pour simplifier les interactions avec les bases de données SQLite. Elle offre une interface orientée objet pour effectuer des opérations de création, de lecture, de mise à jour et de suppression de données. Le projet intègre également des fonctionnalités avancées telles que la gestion des barres de progression lors d'insertions massives de données et la génération automatique de classes modèles Python adaptées à la structure de la base de données.
 
 ## Fonctionnalités Clés
 
