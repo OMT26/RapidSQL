@@ -204,8 +204,8 @@ class {table_name.capitalize()}:
             class_ += f"""        self.{p[1]} = None\n"""
         for p in tables[table_name]['child']:
             class_ += f"""        self.{p[0]} = []\n"""
-        class_ += f"""
-    def insert(self, db:str = DATABASE) -> None:
+        if len(tables[table_name]['parent']) > 0 or len(tables[table_name]['child']) > 0 : class_ += "\n"
+        class_ += f"""    def insert(self, db:str = DATABASE) -> None:
         \"\"\"
         Inserts the {table_name.capitalize()} object into the specified database.
         Only works if the self.id is not 0.
