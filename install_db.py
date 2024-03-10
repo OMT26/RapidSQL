@@ -17,7 +17,7 @@ from database import *
 create_table(FOLDER+'database.sqlite3',
 'user',
 {
-    'useranme': 'TEXT',
+    'username': 'TEXT',
     'password': 'TEXT'
 })
 
